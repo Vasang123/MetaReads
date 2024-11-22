@@ -1,0 +1,30 @@
+{
+  "canisters": {
+    "MetaReads_backend": {
+      "candid": "src/MetaReads_backend/MetaReads_backend.did",
+      "package": "MetaReads_backend",
+      "type": "rust",
+      "wasm": "target/wasm32-unknown-unknown/release/MetaReads_backend.wasm",
+      "postbuild": "candid-extractor target/wasm32-unknown-unknown/release/MetaReads_backend.wasm > src/MetaReads_backend/MetaReads_backend.did"
+    },
+    "MetaReads_frontend": {
+      "dependencies": [
+        "MetaReads_backend"
+      ],
+      "source": [
+        "src/MetaReads_frontend/dist"
+      ],
+      "type": "assets",
+      "package": "MetaReads_frontend",
+      "workspace": "MetaReads_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/MetaReads_backend"
+]
+resolver = "2"
